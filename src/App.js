@@ -65,7 +65,9 @@ const chooseSize = <div>
   validator={(v) => v < 1 || v > 5}
   showColors={false}
   handleSubmit={(...v) => setEntries(randomizeEntries(parseInt(v)))} />
-  <div><button onClick={reset}>חזרה לבחירת מצב</button></div>
+  {/* todo: return this button when mode choice is enabled
+  <div><button onClick={reset}>חזרה לבחירת מצב</button></div> 
+  */}
 </div>;
 
 
