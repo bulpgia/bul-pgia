@@ -8,16 +8,18 @@ import thumbsUp from './thumbsup.png';
 function App() {
   let [entries, setEntries] = useState(0);
   let [guesses, setGuesses] = useState([]);
-  let [isNumericMode, setIsNumericMode] = useState(true)
-  let [setupStep, setSetupStep] = useState(0)
+  let [isNumericMode, setIsNumericMode] = useState(false)
+  //todo: change initial step to 0 to allow mode choice
+  let [setupStep, setSetupStep] = useState(1)
 
 
 
   const reset = () => {
     setEntries(0);
     setGuesses([])
-    setIsNumericMode(true);
-    setSetupStep(0);
+    setIsNumericMode(false);
+    //todo: change initial step to 0 to allow mode choice
+    setSetupStep(1);
   }
 
   let endOfPage = useRef(null);
@@ -63,7 +65,9 @@ const chooseSize = <div>
   validator={(v) => v < 1 || v > 5}
   showColors={false}
   handleSubmit={(...v) => setEntries(randomizeEntries(parseInt(v)))} />
-  <div><button onClick={reset}>חזרה לבחירת מצב</button></div>
+  {/* todo: return this button when mode choice is enabled
+  <div><button onClick={reset}>חזרה לבחירת מצב</button></div> 
+  */}
 </div>;
 
 
